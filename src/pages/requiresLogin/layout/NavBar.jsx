@@ -1,4 +1,4 @@
-import ThemePicker from "./ThemePicker";
+import ThemePicker from "../../../components/ThemePicker";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

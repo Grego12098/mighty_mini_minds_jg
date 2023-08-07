@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
-import NavBar from "../components/NavBar";
-import Header from "../components/Header";
-import "../App.css";
-import questionData from "../data/questions.json";
+import NavBar from "./NavBar";
+import Header from "./Header";
+import "../../../App.css";
+import questionData from "../../../data/questions.json";
 import { useEffect, useState } from "react";
 
 export default function AppLayout({ handleThemeChange }) {

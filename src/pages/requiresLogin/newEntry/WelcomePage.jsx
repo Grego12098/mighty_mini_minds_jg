@@ -2,7 +2,7 @@ import { useOutletContext, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
-import { useGetUser } from "../hooks/useGetUser";
+import { useGetUser } from "../../../hooks/useGetUser";
 
 export default function WelcomePage() {
   const userId = localStorage.getItem("userId");

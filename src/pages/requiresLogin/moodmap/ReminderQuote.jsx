@@ -1,4 +1,4 @@
-import reminderQuotes from "../data/reminderQuotes.json";
+import reminderQuotes from "../../../data/reminderQuotes.json";
 
 export default function ReminderQuote() {
   const randomIndex = Math.floor(Math.random() * reminderQuotes.length);

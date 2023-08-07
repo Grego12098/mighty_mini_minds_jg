@@ -1,5 +1,5 @@
-import JournalEntry from "../components/JournalEntry";
-import { useGet } from "../hooks/useGet";
+import JournalEntry from "./JournalEntry";
+import { useGet } from "../../../hooks/useGet";
 
 export default function Journal() {
   const { data: entries } = useGet(); 

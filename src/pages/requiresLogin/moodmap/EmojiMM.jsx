@@ -1,4 +1,4 @@
-export default function Emoji({ mood, date }) {
+export default function EmojiMM({ mood, date }) {
   const emojis = ["🙁", "😕", "😐", "🙂", "😁"];
 
   return (

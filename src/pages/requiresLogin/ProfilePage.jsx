@@ -1,10 +1,10 @@
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useGetUser } from "../hooks/useGetUser";
-import Avatar from "../components/Avatar";
+import { useGetUser } from "../../hooks/useGetUser";
+import Avatar from "../../components/Avatar";
 import { NavLink } from "react-router-dom";
-import FormInput from "../components/FormInput";
+import FormInput from "../../components/FormInput";
 export default function ProfilePage() {
   const userId = localStorage.getItem("userId"); 
   const url = `https://mighty-mini-minds-backend.onrender.com/users/${userId}`; 

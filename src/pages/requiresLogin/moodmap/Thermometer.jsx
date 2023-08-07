@@ -1,4 +1,4 @@
-import ThermometerImage from "../Img/Therm_final_rectangle.png";
+import ThermometerImage from "../../../Img/Therm_final_rectangle.png";
 
 export default function Thermometer(props) {
 

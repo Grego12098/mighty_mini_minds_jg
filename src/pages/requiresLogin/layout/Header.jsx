@@ -1,5 +1,5 @@
-import logo from "../Img/logo-close.png";
-import Avatar from "./Avatar";
+import logo from "../../../Img/logo-close.png";
+import Avatar from "../../../components/Avatar";
 import { useNavigate } from "react-router-dom";
 
 export default function Header() {

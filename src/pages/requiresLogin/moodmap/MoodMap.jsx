@@ -1,9 +1,9 @@
-import AnimatedAvatar from "../components/AnimatedAvatar";
-import Emoji from "../components/Emoji";
-import Thermometer from "../components/Thermometer";
-import WordOfTheDay from "../components/WordOfTheDay";
-import ReminderQuote from "../components/ReminderQuote";
-import { useGet } from "../hooks/useGet";
+import AnimatedAvatar from "../../../components/AnimatedAvatar";
+import EmojiMM from "./EmojiMM";
+import Thermometer from "./Thermometer";
+import WordOfTheDay from "./WordOfTheDay";
+import ReminderQuote from "./ReminderQuote";
+import { useGet } from "../../../hooks/useGet";
 
 export default function MoodMap() {
   const { data: entries} = useGet(); 
@@ -41,7 +41,7 @@ export default function MoodMap() {
       <div className="flex justify-between mb-8">
         {sortedEntries
           ? sortedEntries.map((entry) => (
-              <Emoji
+              <EmojiMM
                 data-testid="emoji-component"
                 key={entry.id}
                 mood={entry.mood}

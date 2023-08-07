@@ -1,4 +1,4 @@
-import wordOfTheDay from "../data/wordOfTheDay.json";
+import wordOfTheDay from "../../../data/wordOfTheDay.json";
 
 import { useEffect, useState } from 'react';
 

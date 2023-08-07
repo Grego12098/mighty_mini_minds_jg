@@ -1,4 +1,4 @@
-import AnimatedAvatar from "../components/AnimatedAvatar";
+import AnimatedAvatar from "../../../components/AnimatedAvatar";
 import { useOutletContext, useNavigate } from "react-router-dom";
 import Confetti from "react-confetti";
 
@@ -39,7 +39,7 @@ export default function ThanksPage() {
       handleEmail();
     }
     setTimeout(() => {
-      navigate("../moodMap"); 
+      navigate("/moodMap"); 
     }, 2000); 
   }
 
