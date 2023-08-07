@@ -21,6 +21,7 @@ import ProfilePage from './pages/requiresLogin/ProfilePage';
 import { AuthProvider } from './auth/AuthProvider';
 import SkipLogin from './SkipLogin';
 import RequireLogin from './RequireLogin';
+import Error from './Error';
 
 function App() {
   const [theme, setTheme] = useState('');
@@ -51,26 +52,32 @@ function App() {
           <Route element={<AppLayout handleThemeChange={handleThemeChange} />}>
             <Route
               path="profile"
+              errorElement={<Error />}
               element={<ProfilePage />}
             />
             <Route
               path="journal"
+              errorElement={<Error />}
               element={<Journal />}
             />
             <Route
               path="moodMap"
+              errorElement={<Error />}
               element={<MoodMap />}
             />
             <Route
               path="welcomePage"
+              errorElement={<Error />}
               element={<WelcomePage />}
             />
             <Route
               path="addEntry"
+              errorElement={<Error />}
               element={<AddEntry />}
             />
             <Route
               path="thanksPage"
+              errorElement={<Error />}
               element={<ThanksPage />}
             />
           </Route>
