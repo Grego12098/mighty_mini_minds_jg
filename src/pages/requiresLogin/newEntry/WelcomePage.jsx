@@ -44,11 +44,8 @@ export default function WelcomePage() {
     setMood(event.target.value); 
   }
 
-  // useEffect(() => {
-  //   console.log(mood);
-  // }, [mood]);
-
   const emojis = ["🙁", "😕", "😐", "🙂", "😁"];
+  console.log(mood)
 
   return (
     <>
@@ -60,57 +57,12 @@ export default function WelcomePage() {
           {emojis.map((item, index) => (
             <EmojiWP
               key={index}
-              mood={index}
+              moodRating={index}
               emoji={item}
               selectedMood={mood}
               handleClick={handleClick}
             />
           ))}
-          {/* <button
-            className={`text-4xl sm:text-6xl md:text-7xl transition-all duration-300 ease-in-out transform hover:scale-125 ${
-              mood === "0" ? "animate-pulse" : ""
-            }`}
-            value={0}
-            onClick={(e) => handleClick(e)}
-          >
-            🙁
-          </button>
-          <button
-            className={`text-4xl sm:text-6xl md:text-7xl transition-all duration-300 ease-in-out transform hover:scale-125 ${
-              mood === "1" ? "animate-pulse" : ""
-            }`}
-            value={1}
-            onClick={(e) => handleClick(e)}
-          >
-            😕
-          </button>
-          <button
-            className={`text-4xl sm:text-6xl md:text-7xl transition-all duration-300 ease-in-out transform hover:scale-125 ${
-              mood === "2" ? "animate-pulse" : ""
-            }`}
-            value={2}
-            onClick={(e) => handleClick(e)}
-          >
-            😐
-          </button>
-          <button
-            className={`text-4xl sm:text-6xl md:text-7xl transition-all duration-300 ease-in-out transform hover:scale-125 ${
-              mood === "3" ? "animate-pulse" : ""
-            }`}
-            value={3}
-            onClick={(e) => handleClick(e)}
-          >
-            🙂
-          </button>
-          <button
-            className={`text-4xl sm:text-6xl md:text-7xl transition-all duration-300 ease-in-out transform hover:scale-125 ${
-              mood === "4" ? "animate-pulse" : ""
-            }`}
-            value={4}
-            onClick={(e) => handleClick(e)}
-          >
-            😁
-          </button> */}
         </div>
         <button
           className="text-white shadow-md text-4xl transition-colors duration-300 ease-in-out transform hover:scale-125 bg-skin-secondary rounded-md my-8 px-5 w-32 h-14 sm:w-40 sm:h-16"
