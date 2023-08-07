@@ -1,9 +1,9 @@
 import { useOutletContext, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { useGetUser } from "../../../hooks/useGetUser";
-
+import EmojiWP from "./EmojiWP";
 export default function WelcomePage() {
   const userId = localStorage.getItem("userId");
 
@@ -24,11 +24,7 @@ export default function WelcomePage() {
     },
   });
 
-  const [mood, setMood] = useState(0); 
-
-  function handleClick(event) {
-    setMood(event.target.value); 
-  }
+  const [mood, setMood] = useState(5); 
 
   // function to post the entry to the server
   function submitMood() {
@@ -36,13 +32,23 @@ export default function WelcomePage() {
       mood: mood, 
       share: false, 
     };
-    if (mood !== 0) {
+    if (mood !== 5) {
       mutate(entry); 
       navigate("/addEntry"); 
     } else {
       alert("Please select a mood"); 
     }
   }
+
+  function handleClick(event) {
+    setMood(event.target.value); 
+  }
+
+  // useEffect(() => {
+  //   console.log(mood);
+  // }, [mood]);
+
+  const emojis = ["🙁", "😕", "😐", "🙂", "😁"];
 
   return (
     <>
@@ -51,7 +57,16 @@ export default function WelcomePage() {
           Welcome, {user ? user.name : ""}! How are you feeling today?
         </h1>
         <div className="flex justify-around w-full">
-          <button
+          {emojis.map((item, index) => (
+            <EmojiWP
+              key={index}
+              mood={index}
+              emoji={item}
+              selectedMood={mood}
+              handleClick={handleClick}
+            />
+          ))}
+          {/* <button
             className={`text-4xl sm:text-6xl md:text-7xl transition-all duration-300 ease-in-out transform hover:scale-125 ${
               mood === "0" ? "animate-pulse" : ""
             }`}
@@ -95,7 +110,7 @@ export default function WelcomePage() {
             onClick={(e) => handleClick(e)}
           >
             😁
-          </button>
+          </button> */}
         </div>
         <button
           className="text-white shadow-md text-4xl transition-colors duration-300 ease-in-out transform hover:scale-125 bg-skin-secondary rounded-md my-8 px-5 w-32 h-14 sm:w-40 sm:h-16"

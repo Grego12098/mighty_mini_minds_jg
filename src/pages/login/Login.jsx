@@ -1,26 +1,15 @@
 import {useState, useEffect, useContext } from "react";
-import logo from "../Img/logo-close.png";
+import logo from "../../Img/logo-close.png";
 import { NavLink, useNavigate, Outlet } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
-import quotes from "../data/loginQuotes.json";
-import { AuthContext } from "../auth/AuthProvider";
+import { AuthContext } from "../../auth/AuthProvider";
+import { getRandomQuote } from "./getRandomQuote";
 
 export default function Login() {
   const { session, supabase } = useContext(AuthContext);
-
-  // make this a hook
-  const [randomQuote, setRandomQuote] = useState(null); 
-  useEffect(() => {
-    function generateRandomQuote() {
-      const randomIndex = Math.floor(Math.random() * quotes.length); 
-      const selectedQuote = quotes[randomIndex]; 
-      return selectedQuote; 
-    }
-    const quote = generateRandomQuote(); 
-    setRandomQuote(quote); 
-  }, []);
-
+  const randomQuote = getRandomQuote();
+  
   const [loginData, setLoginData] = useState({
     password: "",
     email: "",

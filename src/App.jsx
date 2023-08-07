@@ -8,7 +8,7 @@ import {
   Outlet,
 } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import Login from './pages/Login';
+import Login from './pages/login/Login';
 import SignUp from './pages/SignUp';
 import About from './pages/About';
 import AppLayout from './pages/requiresLogin/layout/AppLayout';
